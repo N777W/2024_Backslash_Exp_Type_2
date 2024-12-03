@@ -87,19 +87,19 @@ let experiment_configuration_function = (writer) => {
             };
             t.expected_answer = task.solution;
             t.accepts_answer_function = (given_answer) => {
-                return parseInt(given_answer) === task.solution;
+                return given_answer;
             };
             t.do_print_error_message = (given_answer) => {
                 writer.clear_error();
                 writer.print_html_on_error(
-                    `<h1>Invalid answer: ${given_answer}.`
+                    `<h1>Invalid answer: ${given_answer}`
                 );
             };
             t.do_print_after_task_information = () => {
                 writer.clear_error();
                 writer.print_string_on_stage(
                     writer.convert_string_to_html_string(
-                        "Correct.\n\n" +
+                        "Answear saved!\n\n" +
                         "If you feel not concentrated enough, take a short break.\n\n" +
                         "Press [Enter] to continue."
                     )
